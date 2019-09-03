@@ -20,7 +20,7 @@ class UserInfoSpider(scrapy.Spider):
         self.__api_0 = 'api/container/getIndex?type=uid&value='
         self.__api_1 = '&containerid=100505'
         self.__sleep_time = int(scrapy.conf.settings.get('USER_INFO_SPIDER_SLEEP_TIME'))  # 设置爬虫暂停时延
-        self.__repeat_times = scrapy.conf.settings.get('WEIBO_INFO_SPIDER_REPEAT_TIME')  # 设置爬虫爬取失败时重复爬取次数
+        self.__repeat_times = int(scrapy.conf.settings.get('WEIBO_INFO_SPIDER_REPEAT_TIME'))  # 设置爬虫爬取失败时重复爬取次数
         self.__set_db_login()  # 设置数据库配置信息
 
     def __set_db_login(self):
