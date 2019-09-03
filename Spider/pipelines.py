@@ -49,7 +49,7 @@ class UserInfoPipeline(object):
 
     @classmethod
     def from_settings(cls, settings):
-        #设置数据库连接参数
+        # 设置数据库连接参数
         db_params = dict(
             host=settings['MYSQL_HOST'],
             user=settings['MYSQL_USER'],

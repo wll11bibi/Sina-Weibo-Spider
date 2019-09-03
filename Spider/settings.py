@@ -176,6 +176,12 @@ MYSQL_DBNAME = 'weibo'
 # 数据库编码
 MYSQL_CHARSET = 'utf8mb4'
 
+WEIBO_INFO_SPIDER_REPEAT_TIME = '5'
+
+USER_INFO_SPIDER_SLEEP_TIME = '60'
+# User uid查询语句
+USER_INFO_QUERY_SQL = 'select uid from user_info where urank is null order by followers_count desc '
+
 # User_Info 通用插入语句
 USER_INFO_GENERAL_SQL = """update user_info set  verified = %d, user_name = \'%s\', icon = %d, 
                description = \"%s\", gender = \'%s\', urank = %d, mbtype = %d, mbrank = %d, verified_type = %d where uid = %d
@@ -186,10 +192,14 @@ USER_INFO_VERIFIED_REASON_SQL = 'update user_info set verified_reason = \'%s\' w
 # VERIFIED_TYPE_EXT 插入语句
 USER_INFO_VERIFIED_TYPE_EXT_SQL = 'update user_info set verified_type_ext = %d where uid = %d '
 
+# Weibo_Info Spider query sql
+WEIBO_INFO_QUERY_SQL = 'select uid from user_info order by followers_count desc'
+
+# 用户微博爬取页数限制参数
 WEIBO_INFO_START_PAGE = '1'
 WEIBO_INFO_END_PAGE = '11'
 
-WEIBO_INFO_QUERY_SQL = 'select uid from user_info order by followers_count desc'
+
 
 # MYSQL_HOST = 'localhost'
 # MYSQL_DB = 'weibo'
